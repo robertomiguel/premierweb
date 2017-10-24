@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Fiat from '../../autos/fiat.json'
+
 import {
     Table,
     TableBody,
@@ -15,7 +15,7 @@ class Lista extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            autos: Fiat
+            autos: this.props.lista
         }
     }
 
@@ -23,7 +23,7 @@ class Lista extends Component {
         let nameTextField = editText.target.name
         if (nameTextField === 'filtroBuscar') {
             this.setState({
-                autos: Fiat.filter(
+                autos: this.props.lista.filter(
                     f => f.modelo.toLowerCase().search(nuevoTexto.toLowerCase()) > -1)
             })
             console.log(nuevoTexto)
@@ -56,7 +56,7 @@ class Lista extends Component {
                     <TableBody
                         displayRowCheckbox={false}
                         showRowHover={true}>
-                        {this.state.autos.map((dato, indice) => (
+                        {!this.state.autos && this.state.autos.map((dato, indice) => (
                             <TableRow key={indice}>
                                 <TableRowColumn>{dato.modelo}</TableRowColumn>
                                 <TableRowColumn>{dato.cuota}</TableRowColumn>
