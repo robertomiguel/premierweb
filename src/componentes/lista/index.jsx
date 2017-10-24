@@ -15,17 +15,31 @@ class Lista extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            autos: this.props.lista
+            listaAutos: [],
+            cargado: '0'
         }
+    }
+
+    // shouldComponentUpdate(nextProps, nextState){
+    //     return true
+    // }
+
+    // componentWillUpdate(nextProps, nextState){
+    //
+    // }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({listaAutos: nextProps, cargado: '1'})
+        console.log('nuevo prop')
     }
 
     inputText = (editText, nuevoTexto) => {
         let nameTextField = editText.target.name
         if (nameTextField === 'filtroBuscar') {
             this.setState({
-                autos: this.props.lista.filter(
+                listaAutos: {lista: this.state.listaAutos.lista.filter(
                     f => f.modelo.toLowerCase().search(nuevoTexto.toLowerCase()) > -1)
-            })
+            }})
             console.log(nuevoTexto)
         } else {
             console.log("inputText: name?: $nameTextField")
@@ -56,12 +70,13 @@ class Lista extends Component {
                     <TableBody
                         displayRowCheckbox={false}
                         showRowHover={true}>
-                        {!this.state.autos && this.state.autos.map((dato, indice) => (
+                        {this.state.cargado==='1' && this.state.listaAutos.lista.map((dato, indice) => (
                             <TableRow key={indice}>
                                 <TableRowColumn>{dato.modelo}</TableRowColumn>
                                 <TableRowColumn>{dato.cuota}</TableRowColumn>
                             </TableRow>
-                        ))}
+                        ))
+                        }
                     </TableBody>
 
                     <TableFooter>

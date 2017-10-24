@@ -25,7 +25,35 @@ class autoMenu extends Component{
     }
 
     seleccion = (marca) => {
-        let json = this.state.autos.filter(f=>f.marca===marca)
+        let listaId = marca.target.id.toString()
+        let json = {}
+        switch (listaId) {
+            case '1':
+                json = this.state.autos[ listaId - 1 ].lista
+                break
+            case '2':
+                json = this.state.autos[ listaId - 1 ].lista
+                break
+            case '3':
+                json = this.state.autos[ listaId - 1 ].lista
+                break
+            case '4':
+                json = this.state.autos[ listaId - 1 ].lista
+                break
+            case '5':
+                json = this.state.autos[ listaId - 1 ].lista
+                break
+            case '6':
+                json = this.state.autos[ listaId - 1 ].lista
+                break
+            case '7':
+                json = this.state.autos[ listaId - 1 ].lista
+                break
+            default:
+                console.log('no hay coincidencia en lista menu autos')
+                return
+        }
+
         this.props.seleccionar(json)
     }
     
@@ -34,7 +62,7 @@ class autoMenu extends Component{
             <div>
                 <ul>
                     {this.state.autos.map(marca=>
-                        <li key={marca.id} onClick={this.seleccion(marca.marca)}>{marca.marca}</li>
+                        <li id={marca.id} key={marca.id} onClick={this.seleccion.bind(this)}>{marca.marca}</li>
                     )}
                 </ul>
             </div>
