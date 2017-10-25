@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
 
 import Fiat         from '../../autos/fiat.json'
 import Chevrolet    from '../../autos/chevrolet.json'
@@ -12,6 +14,7 @@ class autoMenu extends Component{
     constructor(props){
         super(props)
             this.state = {
+                value: 1,
                 autos: [
                     {id: 1, marca: "Fiat",         lista : Fiat},
                     {id: 2, marca: "Chevrolet",    lista : Chevrolet},
@@ -24,47 +27,26 @@ class autoMenu extends Component{
             }
     }
 
-    seleccion = (marca) => {
-        let listaId = marca.target.id.toString()
-        let json = {}
-        switch (listaId) {
-            case '1':
-                json = this.state.autos[ listaId - 1 ].lista
-                break
-            case '2':
-                json = this.state.autos[ listaId - 1 ].lista
-                break
-            case '3':
-                json = this.state.autos[ listaId - 1 ].lista
-                break
-            case '4':
-                json = this.state.autos[ listaId - 1 ].lista
-                break
-            case '5':
-                json = this.state.autos[ listaId - 1 ].lista
-                break
-            case '6':
-                json = this.state.autos[ listaId - 1 ].lista
-                break
-            case '7':
-                json = this.state.autos[ listaId - 1 ].lista
-                break
-            default:
-                console.log('no hay coincidencia en lista menu autos')
-                return
-        }
+    componentDidMount(){
+        this.seleccion(null, 0, 1)
+    }
 
-        this.props.seleccionar(json)
+    seleccion = (obj, key, value) => {
+        this.setState({value})
+        let json = this.state.autos[key].lista
+        let marca = this.state.autos[key].marca
+        this.props.seleccionar(json, marca)
     }
     
     render() {
-        return(
+        return (
             <div>
-                <ul>
-                    {this.state.autos.map(marca=>
-                        <li id={marca.id} key={marca.id} onClick={this.seleccion.bind(this)}>{marca.marca}</li>
+                <DropDownMenu value={this.state.value}
+                              onChange={this.seleccion}>
+                    {this.state.autos.map((marca, indice)=>
+                        <MenuItem value={indice+1} key={indice} primaryText={marca.marca}/>
                     )}
-                </ul>
+                </DropDownMenu>
             </div>
         )
     }
