@@ -11,6 +11,22 @@ import {
 } from 'material-ui/Table'
 import TextField from 'material-ui/TextField'
 
+
+const estilo = {
+    header : {
+        color         : "black",
+        fontSize      : 16,
+        TextTransform : "uppercase"
+    },
+    headerColumn: {
+        color     : "black",
+        fontSize  : 14
+    },
+    contenedor: {
+        maxWidth     : 500
+    }
+}
+
 class Lista extends Component {
     constructor(props) {
         super(props)
@@ -19,18 +35,16 @@ class Lista extends Component {
             cargado: '0',
             marca: 'Seleccionar...'
         }
+
     }
 
-    // shouldComponentUpdate(nextProps, nextState){
-    //     return true
-    // }
-
-    // componentWillUpdate(nextProps, nextState){
-    //
-    // }
+   // componentDidMount() {
+   //     this.textInput.focus()
+   // }
 
     componentWillReceiveProps(nextProps) {
         this.setState({listaAutos: nextProps.lista, cargado: '1', marca: nextProps.marca})
+        this.textInput.focus()
         console.log('nuevo prop')
     }
 
@@ -49,24 +63,24 @@ class Lista extends Component {
 
     render() {
         return (
-            <div>
-                <Table
-                    height='500px'>
+            <div style={estilo.contenedor}>
+                <Table  height="500px">
                     <TableHeader displaySelectAll={false}>
                         <TableRow>
-                            <TableHeaderColumn colSpan="2">
+                            <TableHeaderColumn colSpan="2" style={estilo.header}>
                                 {this.state.marca}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
+                                <span> : </span>
                                 <TextField
                                     floatingLabelText="Buscar..."
                                     onChange={this.inputText}
-                                    name="filtroBuscar"/>
+                                    name="filtroBuscar"
+                                    ref={(input)=>{this.textInput = input}}
+                                    />
                             </TableHeaderColumn>
                         </TableRow>
                         <TableRow>
-                            <TableHeaderColumn>Modelo</TableHeaderColumn>
-                            <TableHeaderColumn>Cuota</TableHeaderColumn>
+                            <TableHeaderColumn style={estilo.headerColumn}>Modelo</TableHeaderColumn>
+                            <TableHeaderColumn style={estilo.headerColumn}>Cuota</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
 

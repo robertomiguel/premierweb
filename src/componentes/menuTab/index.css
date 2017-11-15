@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.menuTab {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.contenido {
+	position: fixed;
+	top: 105px
+
+}
+
+@media screen and (max-width: 900px) {
+  .menuTab {
+    top: -50px;
+  }
+  .contenido {
+  	top: 60px;
+  }
+}
