@@ -1,16 +1,16 @@
-import React, {Component} from 'react'
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
+import React, {Component}   from 'react'
+import DropDownMenu         from 'material-ui/DropDownMenu'
+import MenuItem             from 'material-ui/MenuItem'
 
-import Fiat         from '../../autos/fiat.json'
-import Chevrolet    from '../../autos/chevrolet.json'
-import Ford         from '../../autos/ford.json'
-import Peugeot      from '../../autos/peugeot.json'
-import Renault      from '../../autos/renault.json'
-import Toyota       from '../../autos/toyota.json'
-import Volkswagen   from '../../autos/volkswagen.json'
+import Fiat         from './autos/fiat.json'
+import Chevrolet    from './autos/chevrolet.json'
+import Ford         from './autos/ford.json'
+import Peugeot      from './autos/peugeot.json'
+import Renault      from './autos/renault.json'
+import Toyota       from './autos/toyota.json'
+import Volkswagen   from './autos/volkswagen.json'
 
-class autoMenu extends Component{
+class AutoMenu extends Component{
     constructor(props){
         super(props)
             this.state = {
@@ -42,7 +42,8 @@ class autoMenu extends Component{
         return (
             <div>
                 <DropDownMenu value={this.state.value}
-                              onChange={this.seleccion}>
+                              onChange={this.seleccion}
+                              className="dropDown">
                     {this.state.autos.map((marca, indice)=>
                         <MenuItem value={indice+1} key={indice} primaryText={marca.marca}/>
                     )}
@@ -52,4 +53,4 @@ class autoMenu extends Component{
     }
 }
 
-export default autoMenu
+export default AutoMenu

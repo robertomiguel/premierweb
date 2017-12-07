@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import AppBar from 'material-ui/AppBar'
 import MenuPlegable from '../menuPlegable'
+import './index.css'
 
 class Titulo extends Component {
     constructor(props) {
@@ -25,9 +26,10 @@ class Titulo extends Component {
         return (
             <div>
                 <AppBar
-                    title='Servicios Premier'
+                    title={(<img src="/img/serviciospremier1.png" alt="premier" className="img-responsive centro"/>)}
                     onRightIconButtonTouchTap={this.abrirCerrarMenu}
                     onLeftIconButtonTouchTap={this.abrirCerrarMenu}
+                    className="appBar"
                 />
                 <MenuPlegable open={this.state.openMenu} accion={this.accion}/>
             </div>

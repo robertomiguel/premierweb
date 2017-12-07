@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  overflow: hidden;
 }
 
 .menuTab {
@@ -14,9 +13,11 @@ body {
 }
 
 .contenido {
-	position: fixed;
-	top: 105px
-
+    position: fixed;
+    top: 110px;
+    bottom: 0;
+    width: 100%;
+    overflow: scroll;
 }
 
 @media screen and (max-width: 900px) {

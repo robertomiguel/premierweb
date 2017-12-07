@@ -1,0 +1,39 @@
+.agricola {
+	background-image    : url('/img/fondoagro.jpg');
+}
+
+.promo-agricola {
+	position: relative;
+	text-align: center;
+}
+
+.promo-agricola table {
+	margin: auto;
+	border: solid 1px black;
+	letter-spacing: 3px;
+	overflow: hidden;
+	font-family: "Impact";
+	font-size: 16px;
+}
+
+.promo-agricola table td {padding: 5px;}
+
+.promo-agricola table tr:nth-child(even) {
+	background: black;
+	color: white;
+}
+.promo-agricola table tr:nth-child(odd) {
+	background: yellow;
+	color: black;
+}
+
+.maquina-agricola {
+	text-align: center;
+	font-family: "Impact";
+	letter-spacing: 2px;
+	font-size: 16px;
+}
+
+.maquina-agricola img {
+	margin: auto;
+}

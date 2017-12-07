@@ -1,0 +1,12 @@
+.horario {
+	width: 100%;
+	max-width: 600px;
+	background: white;
+	text-align: center;
+	font-family: "Impact";
+	border: solid 2px red;
+	margin: auto;
+	font-size: 20px;
+	padding: 5px;
+	letter-spacing: 2px;
+}

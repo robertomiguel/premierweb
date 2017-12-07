@@ -3,12 +3,14 @@ import { Tabs, Tab }from 'material-ui/Tabs';
 import { connect } 	from 'react-redux'
 import acciones 	from '../../acciones'
 
-import Lista    from '../lista'
-import AutoMenu from '../autoMenu'
-
 import './index.css'
 
-import Preguntas from './prx.jsx'
+import Listado 		from './listado'
+import Preguntas 	from './preguntas'
+import Agricola 	from './agricola'
+import LaEmpresa 	from './laempresa'
+import Principal 	from './principal'
+import Contacto 	from './contacto'
 
 class MenuTab extends Component {
 	constructor(props){
@@ -42,15 +44,11 @@ class MenuTab extends Component {
 
 		let contenido = (menu) => {
             return {
-                "principal": "Principal",
-                "vehiculos":    <div>
-                                    <AutoMenu seleccionar={this.listaSeleccion}/>
-                                    <Lista  lista={this.state.lista}
-                                            marca={this.state.marca}/>
-                                </div>,
-                "maquinas": "Maquinaria",
-                "laempresa": "La empresa",
-                "promo": "Promociones",
+                "principal": <Principal/>,
+                "vehiculos": <Listado lista={this.state.lista} marca={this.state.marca} seleccion={this.listaSeleccion} />,
+                "maquinas": <Agricola/>,
+                "laempresa": <LaEmpresa/>,
+                "contacto": <Contacto/>,
                 "preguntas": <Preguntas/>,
             }[menu];
         }
@@ -66,10 +64,10 @@ class MenuTab extends Component {
 			        <Tab label="Vehículos" 	 		  value="vehiculos" />
 			        <Tab label="Maquinaria"  		  value="maquinas" 	/>
 			        <Tab label="La Empresa"  		  value="laempresa" />
-			        <Tab label="Promociones" 		  value="promo" 	/>
+			        <Tab label="Contacto" 		  	  value="contacto" 	/>
 			        <Tab label="Preguntas Frecuentes" value="preguntas" />
 			    </Tabs>
-			    <div class="contenido">
+			    <div className="contenido">
 			      	{contenido(this.state.seleccionado)}
 			    </div>
 			</div>

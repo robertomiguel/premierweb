@@ -1,0 +1,48 @@
+.dropDown {
+	background: black;
+	color: white;
+	max-width: 500px !important;
+	text-align: center;
+}
+
+.dropDown ul {
+	-webkit-box-shadow   : 0 0 8px 4px rgba(0, 0, 0, .5);
+	box-shadow           : 0 0 8px 4px rgba(0, 0, 0, .5);
+}
+
+.buscarTexto {
+	border: solid 2px red;
+    color: black;
+    background: white;
+    font-size: 16px;
+    margin-right: 3px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.casilla {
+    border: solid 2px red;
+    padding: 10px;
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    background: white;
+}
+
+.columModelo {
+    color: black;
+    font-size: 16px;
+}
+
+.columCuota {
+    color: black;
+    font-size: 14px;
+}
+
+.listado {
+	background: rgba(255, 255, 255, 0.7);
+}

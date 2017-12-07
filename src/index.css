@@ -1,0 +1,23 @@
+body {
+    background-image    : url('/img/fondomarcas2.jpg');
+}
+
+@font-face {
+    font-family         : "Impact";
+    src                 : url("/fonts/impact.woff");
+}
+
+.sombra {
+   -webkit-box-shadow   : 0 0 8px 4px rgba(0, 0, 0, .5);
+   box-shadow           : 0 0 8px 4px rgba(0, 0, 0, .5);
+}
+
+.centro {
+    margin              : auto;
+}
+
+.redondear {
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}

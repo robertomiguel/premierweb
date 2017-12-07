@@ -47,7 +47,7 @@ class menuPlegable extends Component {
                     <MenuItem value="vehiculos" primaryText="Vehículos" leftIcon={<Glyphicon glyph='usd'/>} />
                     <MenuItem value="maquinas" primaryText="Maquinaria" leftIcon={<Glyphicon glyph='grain'/>} />
                     <MenuItem value="laempresa" primaryText="La Empresa" leftIcon={<Glyphicon glyph='exclamation-sign'/>} />
-                    <MenuItem value="promo" primaryText="Promociones" leftIcon={<Glyphicon glyph='gift'/>} />
+                    <MenuItem value="contacto" primaryText="Contacto" leftIcon={<Glyphicon glyph='gift'/>} />
                     <MenuItem value="preguntas" primaryText="Preguntas Fecuentes" leftIcon={<Glyphicon glyph='question-sign'/>} />
                 </Menu>
             </Drawer>

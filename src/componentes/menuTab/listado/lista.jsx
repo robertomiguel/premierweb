@@ -11,7 +11,7 @@ import {
 } from 'material-ui/Table'
 import TextField from 'material-ui/TextField'
 
-
+/*
 const estilo = {
     header : {
         color         : "black",
@@ -26,6 +26,7 @@ const estilo = {
         maxWidth     : 500
     }
 }
+*/
 
 class Lista extends Component {
     constructor(props) {
@@ -44,7 +45,8 @@ class Lista extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({listaAutos: nextProps.lista, cargado: '1', marca: nextProps.marca})
-        this.textInput.focus()
+        //this.textInput.focus()
+        //ref={(input)=>{this.textInput = input}} // en el componente con input
         console.log('nuevo prop')
     }
 
@@ -63,24 +65,23 @@ class Lista extends Component {
 
     render() {
         return (
-            <div style={estilo.contenedor}>
+            <div className="contenedor">
                 <Table  height="500px">
                     <TableHeader displaySelectAll={false}>
                         <TableRow>
-                            <TableHeaderColumn colSpan="2" style={estilo.header}>
+                            <TableHeaderColumn colSpan="2" className="header">
                                 {this.state.marca}
                                 <span> : </span>
                                 <TextField
                                     floatingLabelText="Buscar..."
                                     onChange={this.inputText}
                                     name="filtroBuscar"
-                                    ref={(input)=>{this.textInput = input}}
                                     />
                             </TableHeaderColumn>
                         </TableRow>
                         <TableRow>
-                            <TableHeaderColumn style={estilo.headerColumn}>Modelo</TableHeaderColumn>
-                            <TableHeaderColumn style={estilo.headerColumn}>Cuota</TableHeaderColumn>
+                            <TableHeaderColumn className="headerModelo">Modelo</TableHeaderColumn>
+                            <TableHeaderColumn className="headerCuota">Cuota</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
 

@@ -1,0 +1,22 @@
+.laempresa {
+	max-width: 600px;
+	background: white;
+    background-size         : auto 100%;
+    background-repeat       : no-repeat;
+    background-position     : center; 
+	background-image: url('/img/negocio.png');
+	padding: 10px;
+	font-size: 16px;
+	letter-spacing: 2px;
+	font-family: "Impact";
+	border: solid 2px red;
+}
+
+.lamejor {
+	display: block;
+	overflow: hidden;
+	margin: 0 auto;
+	padding:2px;
+	border: solid 2px red;
+	background: white;
+}
