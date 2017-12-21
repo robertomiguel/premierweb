@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Glyphicon} from 'react-bootstrap'
 
 class Lista extends Component {
     constructor(props) {
@@ -20,13 +21,19 @@ class Lista extends Component {
         this.setState({listaAutos: nextProps.lista, cargado: '1', marca: nextProps.marca, filtro: ''})
         //this.textInput.focus()
         //ref={(input)=>{this.textInput = input}} // en el componente con input
-        console.log('nuevo prop')
+        //console.log('nuevo prop')
     }
 
     inputText = (a) => {
             this.setState({
                 filtro: a.target.value,
             })
+    }
+
+    keyPress = (t) => {
+            if (t.charCode===13 && this.state.filtro !== '') {
+                this.textInput.focus()
+            }
     }
 
     borrarFiltro = () => {
@@ -36,15 +43,20 @@ class Lista extends Component {
     render() {
         return (
             <div className="contenedor">
+                                <span className="buscarTextoLupa"><Glyphicon glyph="search"/></span>
                                 <input
                                     placeholder="Buscar..."
                                     onChange={this.inputText}
                                     name="filtroBuscar"
                                     className="buscarTexto redondear"
-                                    value={this.state.filtro}/>
+                                    onKeyPress={this.keyPress}
+                                    value={this.state.filtro}
+                                />
 
                                 {this.state.filtro !== '' && (
-                                    <button onClick={this.borrarFiltro}>X</button>
+                                    <button onClick={this.borrarFiltro}
+                                            ref={(input)=>{this.textInput = input}}
+                                    >X</button>
                                 )}
 
                         {this.state.cargado==='1' && this.state.listaAutos

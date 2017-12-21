@@ -5,3 +5,9 @@
 .appBar img {
 	padding-top: 5px;
 }
+
+.burgerIcon {
+	padding-top: 5px;
+	font-size: 32px;
+	vertical-align: middle;
+}

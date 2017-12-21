@@ -1,8 +1,12 @@
-import { createStore, applyMiddleware } from 'redux'
+import {    createStore,
+            //applyMiddleware
+        } from 'redux'
 import reducer from './reducer'
 
 
 // Middleware
+
+/*
 const info = store => next => (accion) => {
 
     console.group('storeLog')
@@ -20,9 +24,9 @@ const info = store => next => (accion) => {
     return resultado
 
 }
-
+*/
 const store = createStore(reducer,
-    applyMiddleware( info ),
+    //applyMiddleware( info ),
 
 );
 

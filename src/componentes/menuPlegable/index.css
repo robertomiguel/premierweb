@@ -1,16 +1,15 @@
-.principal {
-	width: 100%;
-	padding-top: 10px;
+.menuPlegable * {
+	font-size: 20px;
 }
 
-.principal img {
+.menuPlegable img {
 	display: block;
 	margin: 0 auto;
 	-webkit-box-shadow   : 0 0 8px 4px rgba(0, 0, 0, .5);
 	box-shadow           : 0 0 8px 4px rgba(0, 0, 0, .5);
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
     padding: 2px;
     background: white;
 }

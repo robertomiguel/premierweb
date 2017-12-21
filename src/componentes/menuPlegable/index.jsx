@@ -5,6 +5,7 @@ import Menu     from 'material-ui/Menu'
 import {Glyphicon} from 'react-bootstrap'
 import { connect }  from 'react-redux'
 import acciones     from '../../acciones'
+import './index.css'
 
 class menuPlegable extends Component {
     constructor(props) {
@@ -41,7 +42,10 @@ class menuPlegable extends Component {
             <Drawer open={this.state.open}
                     docked={false}
                     width={350}
-                    onRequestChange={(open) => this.accion(open)}>
+                    onRequestChange={(open) => this.accion(open)}
+                    className="menuPlegable"
+                    >
+                <img src="/img/lamejorfinanciacion.png" className="img-responsive" alt="Servicios Premier"/>
                 <Menu onItemTouchTap={this.seleccion}>
                     <MenuItem value="principal" primaryText="Inicio" leftIcon={<Glyphicon glyph='leaf'/>} />
                     <MenuItem value="vehiculos" primaryText="Vehículos" leftIcon={<Glyphicon glyph='usd'/>} />
@@ -50,6 +54,7 @@ class menuPlegable extends Component {
                     <MenuItem value="contacto" primaryText="Contacto" leftIcon={<Glyphicon glyph='gift'/>} />
                     <MenuItem value="preguntas" primaryText="Preguntas Fecuentes" leftIcon={<Glyphicon glyph='question-sign'/>} />
                 </Menu>
+                <img src="/img/serviciospremiervertical.png" className="img-responsive" alt="Servicios Premier"/>
             </Drawer>
         )
     }

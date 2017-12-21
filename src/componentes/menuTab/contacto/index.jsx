@@ -4,7 +4,7 @@ import './index.css'
 class Contacto extends Component {
 	render(){
 		return (
-			<div style={{"padding-top":"15px"}}>
+			<div style={{"paddingTop":"15px"}}>
 				<img src="/img/consultas.jpg" 
 				className="img-responsive sombra centro redondear" 
 				alt="contacto"

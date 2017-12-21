@@ -1,6 +1,7 @@
 import React, {Component}   from 'react'
 import DropDownMenu         from 'material-ui/DropDownMenu'
 import MenuItem             from 'material-ui/MenuItem'
+import {Glyphicon}          from 'react-bootstrap'
 
 import Fiat         from './autos/fiat.json'
 import Chevrolet    from './autos/chevrolet.json'
@@ -16,13 +17,13 @@ class AutoMenu extends Component{
             this.state = {
                 value: 1,
                 autos: [
-                    {id: 1, marca: "Fiat",         lista : Fiat},
-                    {id: 2, marca: "Chevrolet",    lista : Chevrolet},
-                    {id: 3, marca: "Ford",         lista : Ford},
-                    {id: 4, marca: "Peugeot",      lista : Peugeot},
-                    {id: 5, marca: "Renault",      lista : Renault},
-                    {id: 6, marca: "Toyota",       lista : Toyota},
-                    {id: 7, marca: "Volkswagen",   lista : Volkswagen},
+                    {id: 1, marca: <img src="/img/fiat.png" alt="Premier"/>,         lista : Fiat},
+                    {id: 2, marca: <img src="/img/chevrolet.png" alt="Premier"/>,    lista : Chevrolet},
+                    {id: 3, marca: <img src="/img/ford.png" alt="Premier"/>,         lista : Ford},
+                    {id: 4, marca: <img src="/img/peugeot.png" alt="Premier"/>,      lista : Peugeot},
+                    {id: 5, marca: <img src="/img/renault.png" alt="Premier"/>,      lista : Renault},
+                    {id: 6, marca: <img src="/img/toyota.png" alt="Premier"/>,       lista : Toyota},
+                    {id: 7, marca: <img src="/img/volkswagen.png" alt="Premier"/>,   lista : Volkswagen},
                     ]
             }
     }
@@ -41,11 +42,13 @@ class AutoMenu extends Component{
     render() {
         return (
             <div>
+                <div className="marcaSel">Seleccionar<br/>Marca: </div>
                 <DropDownMenu value={this.state.value}
                               onChange={this.seleccion}
-                              className="dropDown">
+                              className="dropDown"
+                              iconButton={<Glyphicon glyph="menu-down"/>}>
                     {this.state.autos.map((marca, indice)=>
-                        <MenuItem value={indice+1} key={indice} primaryText={marca.marca}/>
+                        <MenuItem className="listaAutos" value={indice+1} key={indice} primaryText={marca.marca}/>
                     )}
                 </DropDownMenu>
             </div>
